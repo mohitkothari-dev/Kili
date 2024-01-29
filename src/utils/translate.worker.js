@@ -20,7 +20,7 @@ self.addEventListener('message', async (event) => {
     })
     console.log(event.data)
     let output = await translator(event.data.text, {
-        tgt_lang: event.data.tgt_lang,
+        tgt_lang: event.data.tgt_language,
         src_lang: event.data.src_lang,
 
         callback_function: x => {

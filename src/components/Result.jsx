@@ -33,8 +33,8 @@ const Result = (props) => {
             console.log('LOADING')
             break;
             case 'update':
-            setTranslation(e.data.results)
-            console.log(e.data.results)
+            setTranslation(e.data.output)
+            console.log(e.data.output)
             break;
             case 'complete':
             setTranslating(false)
@@ -48,17 +48,17 @@ const Result = (props) => {
       return () => worker.current.removeEventListener('message', onMessageReceived)
     },[])
 
-    const textElement = tab === 'transcription' ? output.map(val => val.text) : translation || ''
+    const textElement = tab === 'transcription' ? output.map(val => val.text) : translation || 'No Translation'
 
     const handleCopy = () => {
-      navigator.clipboard.writeText()
+      navigator.clipboard.writeText(textElement)
     }
 
     const handleDownload = () => {
       const element = document.createElement('a')
       const file = new Blob([], {type: 'text/plain'})
       element.href = URL.createObjectURL(file)
-      element.download(`TLDR_${(new Date()).toDateString()}.txt`)
+      element.download = `TLDR_${new Date().toString()}.txt`
       document.body.appendChild(element)
       element.click()
     }
@@ -73,7 +73,7 @@ const Result = (props) => {
       worker.current.postMessage({
         text: output.map(val => val.text),
         src_language: 'eng_Latin',
-        tgt_Language: toLanguage
+        tgt_language: toLanguage
 
       })
     }
@@ -114,10 +114,10 @@ const Result = (props) => {
         }
         <div className='flex flex-col my-8'>
         <div className='flex items-center gap-4 mx-auto text-base'>
-          <button title='Copy' className={`px-2 rounded ${textGradient}`}>
+          <button onClick={handleCopy} title='Copy' className={`px-2 rounded ${textGradient}`}>
           <i className="fa-regular fa-copy"></i>
           </button>
-          <button title='download' className={`px-2 rounded ${textGradient}`}>
+          <button onClick={handleDownload} title='download' className={`px-2 rounded ${textGradient}`}>
           <i className="fa-solid fa-cloud-arrow-down"></i>
           </button>
         </div>

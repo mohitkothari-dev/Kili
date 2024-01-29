@@ -16,7 +16,7 @@ const Translation = (props) => {
             )
           })}
         </select>
-        <button onClick={generateTranslation} className='specialBtn px-3 py-2 rounded-lg duration-200 mt-6'>Translate</button>
+        <button onClick={generateTranslation} className='specialBtn px-3 py-2 rounded-lg duration-200 my-6'>Translate</button>
       </div>)}
       {(textElement && !translating) && (
         <p>{textElement}</p>
