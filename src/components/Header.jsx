@@ -1,0 +1,15 @@
+import React from 'react'
+
+const Header = () => {
+  return (
+    <header className='flex items-center justify-between gap-4 p-4'>
+      <a href="/"><h1 className='bold font-medium'>TL;DR</h1></a>
+      <button className='flex items-center gap-2 specialBtn px-4 py-2 rounded-lg '>
+        <i className="fa-solid fa-plus"></i>
+        <p>New</p>
+      </button>
+    </header>
+  )
+}
+
+export default Header
