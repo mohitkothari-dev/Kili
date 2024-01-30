@@ -72,7 +72,7 @@ const HomePage = ({ setFile, setAudioStream }) => {
 
   return (
     <main className='flex-1 p-4 text-center flex flex-col justify-center gap-3 sm:gap-4'>
-      <h1 className={`text-4xl font-bold font-mono py-3 sm:text-5xl md:text-6xl ${textGradient}`}>Too Long; Don't Read.</h1>
+      <h1 className={`text-4xl font-semibold font-mono py-3 sm:text-5xl md:text-6xl`}><span className={`${textGradient}`}>Inspired by</span>🤗</h1>
       <h3 className='font-medium md:text-lg flex flex-col'>
         <FeatureList elements={features} />
       </h3>
@@ -89,6 +89,7 @@ const HomePage = ({ setFile, setAudioStream }) => {
         const tempFile = e.target.files[0]
         setFile(tempFile)
       }} type="file" className='hidden' accept='.mp3,.wave'/></label>a .mp3 file</p>
+      <p className='italic text-slate-400 mt-10'>AI app marketplace, where you'll get apps built using Hugging Face open source models.</p>
     </main>
   )
 }
