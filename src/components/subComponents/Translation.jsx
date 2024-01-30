@@ -7,8 +7,8 @@ const Translation = (props) => {
 
   return (
     <div className='flex flex-col w-full mx-auto'>
-      {!translating && (<div className='flex flex-col items-stretch'>
-        <select className='flex-1 bg-transparent border-none my-2' value={toLanguage} onChange={(e) => setToLanguage(e.target.value)}>
+      {!translating && (<div className='flex max-[640px]:flex-col justify-center gap-x-4'>
+        <select className='bg-transparent border-none my-2' value={toLanguage} onChange={(e) => setToLanguage(e.target.value)}>
           <option value={`Select language`} className='bg-slate-800 text-slate-100'>Select Language</option>
           {Object.entries(LANGUAGES).map(([key, value]) => {
             return (
@@ -20,7 +20,7 @@ const Translation = (props) => {
       </div>)}
       {(textElement && !translating) && (
         <p>{textElement}</p>
-      )}
+        )}
       {
         translating && (
           <div className='grid place-items-center'>
