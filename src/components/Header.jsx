@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <header className='flex items-center justify-between gap-4 p-4'>
-      <a href="/"><h1 className='bold font-medium flex items-center'><span className='text-4xl'>🐵</span>  Monkey Face</h1></a>
+      <a href="/"><h1 className='bold font-medium flex items-center text-3xl'><span className=''>🦜</span>  Kili</h1></a>
       <button className='flex items-center gap-2 specialBtn px-4 py-2 rounded-lg '>
         <i className="fa-solid fa-plus"></i>
         <p>New</p>
