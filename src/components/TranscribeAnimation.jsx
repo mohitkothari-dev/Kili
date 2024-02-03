@@ -7,7 +7,7 @@ const TranscribeAnimation = ({downloading}) => {
 
   return (
     <main className='flex flex-1 flex-col justify-center p-4 text-center gap-3 sm:gap-4 md:gap-5 max-w-full mx-auto'>
-      <div className="flex flex-col">
+      <div>
       <h1 className={`${textStyle} animate-pulse animate-infinite animate-duration-[2000ms] animate-delay-1000 ${textGradient}`}>Transcribing</h1>
       <p>{!downloading ? `Be patient! it's coming your way.` : 'Engaged. '}</p>
       </div>
