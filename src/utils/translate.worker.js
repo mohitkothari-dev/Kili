@@ -24,9 +24,14 @@ self.addEventListener('message', async (event) => {
         src_lang: event.data.src_lang,
 
         callback_function: x => {
+
+          const decodeOutputs = x.map(outputItem => {
+            return translator.tokenizer.decode(outputItem.output_token_ids, { skip_special_tokens: true })  
+          })
+
             self.postMessage({
                 status: 'update',
-                output: translator.tokenizer.decode(x[0].output_token_ids, { skip_special_tokens: true })
+                output: decodeOutputs
             })
         }
     })
