@@ -81,18 +81,21 @@ const Result = (props) => {
   return (
     <main className='flex flex-1 flex-col justify-center p-4 text-center gap-3 sm:gap-4 md:gap-5 max-w-full mx-auto'>
       <div className="flex flex-col">
-            {output
+            {output && tab === 'transcription'
             ?
             <>
             <h1 className={`${textStyle} animate-jump-in animate-thrice animate-duration-[4500ms] animate-delay-1000 ${textGradient}`}>Transcribed</h1>
             <p>Congratulations! Your transcription is ready.</p>
             </>
-                // : 
-                // downloading && tab === 'translation' 
-                // ?
-                // <h1 className={`${textStyle} animate-jump-in animate-thrice animate-duration-[4500ms] animate-delay-1000 ${textGradient}`}>Translate</h1>
-                :
-                ''
+            : 
+            output && tab === 'translation' 
+            ?
+            <>
+            <h1 className={`${textStyle} animate-jump-in animate-thrice animate-duration-[4500ms] animate-delay-1000 ${textGradient}`}>Translate</h1>
+            <p>Translate your text in any language.</p>
+            </>
+            :
+            ''
             }
         </div>
         {
