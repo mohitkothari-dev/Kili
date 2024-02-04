@@ -36,7 +36,7 @@ self.addEventListener('message', async (event) => {
         }
     })
 
-    console.log('HEHEHHERERE', output)
+    console.log('Final Translation', output)
 
     self.postMessage({
         status: 'complete',
