@@ -83,8 +83,8 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col mx-auto w-full'>
-  <section className='min-h-screen flex flex-col'>
+    <div>
+    <section className='min-h-screen flex flex-col gap-10 px-6 max-w-[1440px] w-full mx-auto'>
     <Header></Header>
     {
       output ? (
