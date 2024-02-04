@@ -10,7 +10,7 @@ const FileDisplay = ({ file, audioStream, handleAudioReset, handleFormSubmission
       if (file) {
           audioRef.current.src = URL.createObjectURL(file)
       } else {
-          audioRef.current.src = URL.createObjectURL(audioStream)
+          audioRef.current.src = URL.createObjectURL(new Blob([audioStream]))
       }
   }, [audioStream, file])
 
