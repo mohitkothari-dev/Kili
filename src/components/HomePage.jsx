@@ -77,7 +77,7 @@ const HomePage = ({ setFile, setAudioStream }) => {
         <FeatureList elements={features} />
       </h3>
       <button onClick={recordingStatus === 'recording' ? stopRecording : startRecording} className='specialBtn px-4 py-2 rounded-xl flex items-center text-base justify-between gap-4 mx-auto w-72 max-w-full my-4'>
-        <p>{recordingStatus === 'inactive' ? 'Record' : 'Stop recording'}</p>
+        <p>{recordingStatus === 'inactive' ? 'Record an audio clip' : 'Stop recording'}</p>
         <div className='flex items-center gap-2'>
           {duration && (
             <p className='text-sm'>{duration}s</p>
