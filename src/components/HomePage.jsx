@@ -85,10 +85,13 @@ const HomePage = ({ setFile, setAudioStream }) => {
         <i className={recordingStatus === 'inactive' ? 'fa-solid duration-200 fa-microphone' : 'fa-solid duration-200 fa-microphone text-rose-500'}></i>
         </div>
       </button>
-      <p className='text-base'>Or <label className={` ${textGradient} cursor-pointer`}>Upload <input onChange={(e) => {
+      <p className='text-base'>or</p>
+      <button className='specialBtn rounded-xl flex items-center text-base justify-between gap-4 mx-auto w-72 max-w-full my-4'>
+      <input onChange={(e) => {
         const tempFile = e.target.files[0]
         setFile(tempFile)
-      }} type="file" className='hidden' accept='.mp3,.wave'/></label>a .mp3 file</p>
+      }} type="file" className='file:px-4 file:py-2 file:cursor-pointer cursor-pointer file:border-0 file:bg-slate-950 file:hover:bg-slate-700 file:text-slate-50 rounded-xl' accept='.mp3,.wave'/>
+      </button>
       <p className='italic text-slate-400 mt-10'>AI app marketplace, where you'll get apps built using Hugging Face open source models.</p>
     </main>
   )
